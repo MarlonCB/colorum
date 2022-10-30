@@ -4,11 +4,7 @@
   "description": "",
   "author": "Marlon Carrillo Barcenas <marloncb2012@gmail.com>",
   "license": "MIT",
-  "keywords": [
-    "colors",
-    "random",
-    "util"
-  ],
+  "keywords": [],
   "main": "dist/node/index.js",
   "browser": "dist/browser/index.js",
   "scripts": {
