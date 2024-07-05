@@ -1,4 +1,1 @@
-export { randomHexColor } from './lib/randomHexColor';
-export { randomRgbColor } from './lib/randomRgbColor';
-export { getShadesColor } from './lib/getShadesColor';
-export { getTintsColor } from './lib/getTintsColor';
+export { randomColorGenerator, randomHexColor, randomRgbColor} from './lib/generators'
