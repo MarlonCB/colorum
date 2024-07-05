@@ -1,7 +1,7 @@
 import {
 	MAXIMUM_RGB_VALUE,
 	MINIMUM_RGB_VALUE,
-} from '../../../constants/rgbConstants';
+} from '../../constants/rgbConstants';
 
 /**
  * The function getRandomValue returns a random number within a specified range.

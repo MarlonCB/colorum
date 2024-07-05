@@ -1,5 +1,5 @@
-import { RGB_NOTATION } from '../../../constants/rgbConstants';
-import { getRandomValue } from '../../utilities/getRandomValue/getRandomValue';
+import { RGB_NOTATION } from '../../../constants';
+import { getRandomValue } from '../../../helpers';
 
 /**
  * The function `randomRgbColor` generates a random RGB color value in TypeScript.

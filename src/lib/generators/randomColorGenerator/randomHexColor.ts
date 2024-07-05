@@ -3,7 +3,7 @@ import {
 	HEXADECIMAL_MAX_LENGTH,
 	HEXADECIMAL_NOTATION,
 	HEXADECIMAL_VALUE_MAP,
-} from '../../../constants/hexConstants';
+} from '../../../constants';
 
 /**
  * The function `randomHexColor` generates a random hexadecimal color code.

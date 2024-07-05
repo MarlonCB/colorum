@@ -1,1 +1,4 @@
-export { randomColorGenerator, randomHexColor, randomRgbColor} from './lib/generators'
+export * from './constants';
+export * from './helpers';
+export * from './lib';
+export * from './types';

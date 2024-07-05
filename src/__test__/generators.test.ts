@@ -1,7 +1,6 @@
-import { randomColorGenerator, randomHexColor, randomRgbColor } from '..';
 import { HEXADECIMAL_MAX_LENGTH } from '../constants/hexConstants';
-import { Tformat } from '../lib/generators/randomColorGenerator';
-
+import { randomColorGenerator, randomHexColor, randomRgbColor } from '../lib';
+import { TypesColorFormat } from '../types';
 
 describe('Random Color Generator', () => {
 	describe('RGB', () => {
@@ -24,7 +23,7 @@ describe('Random Color Generator', () => {
 	});
 
 	it('should handle unexpected format values gracefully', () => {
-		const color = randomColorGenerator('unexpected_format' as Tformat);
+		const color = randomColorGenerator('unexpected_format' as TypesColorFormat);
 		expect(color).toMatch(/^#[0-9A-Fa-f]{6}$/);
 	});
 });
