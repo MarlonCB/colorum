@@ -1,3 +1,5 @@
+import { HEXADECIMAL_REGEX } from "../../../constants/hexConstants";
+
 export const isValidHexColor = (hexColor: string): boolean => {
-	return /^#([0-9A-F]{3}){1,2}$/i.test(hexColor);
+	return HEXADECIMAL_REGEX.test(hexColor);
 };
