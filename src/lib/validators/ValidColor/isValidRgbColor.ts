@@ -3,6 +3,7 @@ import {
 	MAXIMUM_RGB_VALUE,
 	MINIMUM_RGB_VALUE,
 } from '../../../constants/rgbConstants';
+import { isValidRange } from '../../../helpers';
 
 export const isValidRgbColor = (rgb: string): boolean => {
 	const regex = /^rgb\((\d{1,3}),\s*(\d{1,3}),\s*(\d{1,3})\)$/;
@@ -13,13 +14,9 @@ export const isValidRgbColor = (rgb: string): boolean => {
 	const r = parseInt(match[1], BASE_10);
 	const g = parseInt(match[2], BASE_10);
 	const b = parseInt(match[3], BASE_10);
-
-	return (
-		r >= MINIMUM_RGB_VALUE &&
-		r <= MAXIMUM_RGB_VALUE &&
-		g >= MINIMUM_RGB_VALUE &&
-		g <= MAXIMUM_RGB_VALUE &&
-		b >= MINIMUM_RGB_VALUE &&
-		b <= MAXIMUM_RGB_VALUE
-	);
+	const result =
+		isValidRange(r, MINIMUM_RGB_VALUE, MAXIMUM_RGB_VALUE) &&
+		isValidRange(g, MINIMUM_RGB_VALUE, MAXIMUM_RGB_VALUE) &&
+		isValidRange(b, MINIMUM_RGB_VALUE, MAXIMUM_RGB_VALUE);
+	return result;
 };

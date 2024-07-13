@@ -1,6 +1,7 @@
 import { hexToRgb } from '../lib';
+import { rgbToHex } from '../lib/converters/rgbToHex/rgbToHex';
 
-describe('Random Color Generator', () => {
+describe('Converters', () => {
 	describe('Hex to RGB', () => {
 		// converts valid 6-character hex color to RGB format
 		it('should convert valid 6-character hex color to RGB format', () => {
@@ -24,6 +25,19 @@ describe('Random Color Generator', () => {
 				'Invalid hexadecimal format'
 			);
 		});
-		
+	});
+	describe('RGB to Hex', () => {
+		// Converts valid RGB string 'rgb(255, 0, 0)' to '#FF0000'
+		it('should convert valid RGB string to hexadecimal', () => {
+			const rgbColor = 'rgb(255, 0, 0)';
+			const expectedHex = '#FF0000';
+			const result = rgbToHex(rgbColor);
+			expect(result).toBe(expectedHex);
+		});
+		// Throws error for invalid RGB string 'rgb(256, 0, 0)'
+		it('should throw error for invalid RGB string', () => {
+			const rgbColor = 'rgb(256, 0, 0)';
+			expect(() => rgbToHex(rgbColor)).toThrow('Invalid rgb format');
+		});
 	});
 });
