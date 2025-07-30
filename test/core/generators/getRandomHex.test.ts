@@ -1,4 +1,4 @@
-import { getRandomHex } from '../../../src/core/generators/getRandomHex';
+import { getRandomHex } from '../../../src/core';
 
 describe('getRandomHex', () => {
   it('should return a valid hexadecimal color string', () => {
