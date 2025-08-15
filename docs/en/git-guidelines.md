@@ -69,12 +69,12 @@ External contributors **can omit** the ticket ID if they are submitting small im
 
 ### Allowed Types
 
-- `feature`
+- `feat`
 - `bugfix`
 - `refactor`
 - `test`
 - `docs`
-- `tooling`
+- `tool`
 - `chore`
 - `ci`
 
