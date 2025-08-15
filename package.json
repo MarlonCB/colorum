@@ -57,6 +57,8 @@
     }
   ],
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@inquirer/prompts": "^7.2.3",
     "@size-limit/preset-small-lib": "^11.1.6",
     "@typescript-eslint/eslint-plugin": "^8.39.0",

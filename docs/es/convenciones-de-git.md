@@ -67,12 +67,12 @@ Los colaboradores externos **pueden omitirlo** si están contribuyendo con mejor
 
 ### Tipos permitidos
 
-- `feature`
+- `feat`
 - `bugfix`
 - `refactor`
 - `test`
 - `docs`
-- `tooling`
+- `tool`
 - `chore`
 - `ci`
 
