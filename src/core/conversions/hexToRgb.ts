@@ -12,7 +12,7 @@ import {
   HEX_STRING_PREFIX,
   HEX_PREFIX_LENGTH,
   HEX_STRING_LENGTH,
-  HEX_RADIX,
+  HEX_BASE,
   HEX_RED_START,
   HEX_GREEN_START,
   HEX_BLUE_START,
@@ -31,9 +31,9 @@ export const hexToRgb = (
   const cleanHex = hex.slice(HEX_PREFIX_LENGTH);
 
   // Convertir hexadecimal a RGB
-  const r = parseInt(cleanHex.substring(HEX_RED_START, HEX_GREEN_START), HEX_RADIX);
-  const g = parseInt(cleanHex.substring(HEX_GREEN_START, HEX_BLUE_START), HEX_RADIX);
-  const b = parseInt(cleanHex.substring(HEX_BLUE_START, HEX_STRING_LENGTH), HEX_RADIX);
+  const r = parseInt(cleanHex.substring(HEX_RED_START, HEX_GREEN_START), HEX_BASE);
+  const g = parseInt(cleanHex.substring(HEX_GREEN_START, HEX_BLUE_START), HEX_BASE);
+  const b = parseInt(cleanHex.substring(HEX_BLUE_START, HEX_STRING_LENGTH), HEX_BASE);
 
   return {
     r,

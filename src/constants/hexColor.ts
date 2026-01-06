@@ -29,9 +29,9 @@ export const HEX_STRING_LENGTH = 6;
 export const HEX_COMPONENT_LENGTH = 2;
 
 /**
- * Radix (base) for hexadecimal number conversion.
+ * Base for hexadecimal number conversion.
  */
-export const HEX_RADIX = 16;
+export const HEX_BASE = 16;
 
 /**
  * Starting position for extracting the red component from a hex string.
@@ -47,3 +47,13 @@ export const HEX_GREEN_START = HEX_COMPONENT_LENGTH;
  * Starting position for extracting the blue component from a hex string.
  */
 export const HEX_BLUE_START = HEX_COMPONENT_LENGTH * 2;
+
+/**
+ * Length of a single hex digit (for padding purposes).
+ */
+export const HEX_PADDING_LENGTH = 1;
+
+/**
+ * Character used to pad hex values.
+ */
+export const HEX_PAD_ZERO = '0';

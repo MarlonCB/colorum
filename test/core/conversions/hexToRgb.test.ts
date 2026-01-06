@@ -1,4 +1,4 @@
-import { hexToRgb } from '../../../src/core/conversions/hexToRgb';
+import { hexToRgb } from '../../../src/core';
 
 describe('hexToRgb', () => {
   it('should convert hex color with # to RGB object', () => {
