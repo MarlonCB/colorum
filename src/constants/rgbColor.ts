@@ -4,3 +4,6 @@ export const RGB_MAX_VALUE = 255;
 
 // Template string for RGB CSS format
 export const RGB_STRING_PREFIX = 'rgb';
+
+// Template string for RGBA CSS format
+export const RGBA_STRING_PREFIX = 'rgba';
