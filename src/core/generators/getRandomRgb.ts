@@ -4,7 +4,7 @@ import { getRandomIntInRange } from '../../helpers';
 /**
  * Generates a random color in RGB format.
  *
- * @returns {{ r: number, g: number, b: number, toCssString: () => string }}
+ * @returns {{ r: number, g: number, b: number, toStringCss: () => string }}
  *
  * @example
  * getRandomRgb();
@@ -14,7 +14,7 @@ export const getRandomRgb = (): {
   r: number;
   g: number;
   b: number;
-  toCssString: () => string;
+  toStringCss: () => string;
 } => {
   const r = getRandomIntInRange(RGB_MIN_VALUE, RGB_MAX_VALUE);
   const g = getRandomIntInRange(RGB_MIN_VALUE, RGB_MAX_VALUE);
@@ -24,6 +24,6 @@ export const getRandomRgb = (): {
     r,
     g,
     b,
-    toCssString: () => `${RGB_STRING_PREFIX}(${r}, ${g}, ${b})`,
+    toStringCss: () => `${RGB_STRING_PREFIX}(${r}, ${g}, ${b})`,
   };
 };

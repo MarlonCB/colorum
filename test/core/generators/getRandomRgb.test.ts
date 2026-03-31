@@ -18,18 +18,14 @@ describe('getRandomRgb', () => {
     expect(b).toBeLessThanOrEqual(RGB_MAX_VALUE);
   });
 
-  // Verifica que toCssString retorne un string CSS válido
+  // Verifica que toStringCss retorne un string CSS válido
   it('should return a valid CSS rgb string', () => {
     const color = getRandomRgb();
-    const cssString = color.toCssString();
+    const cssString = color.toStringCss();
 
     expect(cssString).toMatch(/^rgb\(\d{1,3}, \d{1,3}, \d{1,3}\)$/);
 
-    const [r, g, b] = cssString
-      .replace('rgb(', '')
-      .replace(')', '')
-      .split(', ')
-      .map(Number);
+    const [r, g, b] = cssString.replace('rgb(', '').replace(')', '').split(', ').map(Number);
 
     expect(r).toBeGreaterThanOrEqual(RGB_MIN_VALUE);
     expect(r).toBeLessThanOrEqual(RGB_MAX_VALUE);
