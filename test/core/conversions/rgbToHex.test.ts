@@ -1,6 +1,7 @@
 import { rgbToHex } from '../../../src/core';
 
 describe('rgbToHex', () => {
+  // Caso base: conversión correcta con valores típicos
   it('should convert RGB to hexadecimal correctly', () => {
     expect(rgbToHex(136, 58, 241)).toBe('#883AF1');
     expect(rgbToHex(255, 0, 0)).toBe('#FF0000');
@@ -8,16 +9,19 @@ describe('rgbToHex', () => {
     expect(rgbToHex(0, 0, 255)).toBe('#0000FF');
   });
 
+  // Valores menores a 16 producen un solo dígito hex — verifica que el padding funciona
   it('should handle edge cases with single-digit hex values', () => {
     expect(rgbToHex(0, 0, 0)).toBe('#000000');
     expect(rgbToHex(15, 15, 15)).toBe('#0F0F0F');
     expect(rgbToHex(1, 2, 3)).toBe('#010203');
   });
 
+  // Valor máximo en los tres canales
   it('should handle maximum RGB values', () => {
     expect(rgbToHex(255, 255, 255)).toBe('#FFFFFF');
   });
 
+  // NaN se castea porque TypeScript no permite pasarlo directamente como number
   it('should throw for invalid component values (out of range or non-integer)', () => {
     expect(() => rgbToHex(-1, 0, 0)).toThrow('must be an integer between 0 and 255');
     expect(() => rgbToHex(0, 256, 0)).toThrow('must be an integer between 0 and 255');

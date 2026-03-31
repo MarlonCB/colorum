@@ -1,26 +1,26 @@
 # Core
 
-Esta carpeta contiene las funciones principales de Colorum. Aquí es donde se implementa la lógica central de la librería para el manejo de colores.
+This folder contains the main functions of Colorum. This is where the central logic of the library for color handling is implemented.
 
-## Reglas de uso
-- Todas las funciones en esta carpeta deben estar relacionadas directamente con la manipulación, conversión o validación de colores.
-- Deben estar bien documentadas y contar con pruebas en Jest para asegurar su correcto funcionamiento.
-- Cada función debe estar ubicada en su propio archivo y ser exportada desde `index.ts`.
+## Rules
 
-## Categorías
-Las funciones dentro de `core` están organizadas en las siguientes categorías:
+- All functions in this folder must be directly related to color manipulation, conversion, or validation.
+- They must be well documented and have Jest tests to ensure correct behavior.
+- Each function must be in its own file and exported from `index.ts`.
 
-- **Conversions (`conversions`)**: Funciones encargadas de convertir colores entre distintos formatos.
-- **Manipulators (`manipulators`)**: Funciones para modificar y ajustar valores de color.
-- **Utilities (`utilities`)**: Funciones auxiliares que complementan el funcionamiento de la librería.
-- **Validators (`validators`)**: Funciones para verificar si un color o un valor es válido en un formato específico.
+## Categories
 
-## Comandos especiales
-Para facilitar la creación de funciones core y sus pruebas, se puede utilizar el siguiente comando especial:
+Functions within `core` are organized into the following categories:
 
-```sh
-yarn bin/new-feature
-```
+- **Conversions (`conversions`)**: Functions for converting colors between different formats.
+- **Generators (`generators`)**: Functions for generating random colors.
+- **Manipulators (`manipulators`)**: Functions for modifying and adjusting color values.
+- **Utilities (`utilities`)**: Helper functions that complement the library's core functionality.
+- **Validators (`validators`)**: Functions for verifying whether a color or value is valid in a specific format.
+
+## Scaffolding
+
+To quickly create a new core function and its test file, run:
 
 ```sh
 npm run bin/new-feature

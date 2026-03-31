@@ -1,28 +1,33 @@
 # Helpers
 
-Esta carpeta contiene funciones auxiliares necesarias para el funcionamiento de las funciones principales de Colorum. Estas funciones no están directamente relacionadas con el manejo de colores, sino que sirven como soporte para la lógica interna de la librería.
+This folder contains auxiliary functions that support the main functions of Colorum. These functions are not directly related to color handling — they serve as internal utilities for the library's logic.
 
-## Reglas de uso
-- Todas las funciones en esta carpeta deben ser genéricas y reutilizables dentro del proyecto.
-- No deben contener lógica específica de conversión, validación o manipulación de colores.
-- Deben estar bien documentadas y contar con pruebas en Jest para asegurar su correcto funcionamiento.
+## Rules
 
-## Estructura
-Cada función auxiliar debe estar ubicada en su propio archivo dentro de esta carpeta y ser exportada desde un `index.ts` para facilitar su uso en el resto del proyecto.
+- All functions in this folder must be generic and reusable within the project.
+- They must not contain logic specific to color conversion, validation, or manipulation.
+- They must be well documented and have Jest tests to ensure correct behavior.
+- They must be exported through an `index.ts` for easy access.
 
-## Ejemplo
-### helpers/randomInRange.ts
+## Structure
+
+Each helper function must be in its own file within this folder and exported from `index.ts`.
+
+## Example
+
+### helpers/getRandomIntInRange.ts
+
 ```ts
-export function randomInRange(min: number, max: number): number {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+export const getRandomIntInRange = (min: number, max: number): number => {
+  // +1 makes the range inclusive on both ends (min and max can both be generated)
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
 ```
 
-### ¿Por qué esta función pertenece a helpers?
+### Why does this function belong in helpers?
 
-La función `randomInRange` es un buen ejemplo de una función auxiliar porque:
+`getRandomIntInRange` is a good example of a helper because:
 
-- No está relacionada directamente con el manejo de colores, sino que es una utilidad matemática general.
-- Puede ser reutilizada en diferentes partes del código donde se necesite generar números aleatorios dentro de un rango.
-- Facilita la modularidad y la limpieza del código, evitando repetir lógica en múltiples archivos.
-- Su uso es frecuente en diversas operaciones internas, como la generación de valores aleatorios en algoritmos o cálculos específicos dentro de la librería.
+- It is not related to color handling — it is a general-purpose math utility.
+- It can be reused across different parts of the codebase wherever a random number in a range is needed.
+- It keeps the core functions clean by extracting low-level logic into a dedicated place.

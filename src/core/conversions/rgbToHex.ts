@@ -31,6 +31,7 @@ export const rgbToHex = (r: number, g: number, b: number): string => {
 
   const toHex = (value: number): string => {
     const hex = value.toString(HEX_BASE);
+    // Valores menores a 16 producen un solo dígito hex, se agrega el cero para mantener el formato RR
     return hex.length === HEX_PADDING_LENGTH ? `${HEX_PAD_ZERO}${hex}` : hex;
   };
 

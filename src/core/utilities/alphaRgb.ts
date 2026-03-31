@@ -24,6 +24,7 @@ export const alphaRgb = (
     throw new Error(`Invalid amount: ${amount}. Must be a number between 0 and 1`);
   }
 
+  // Es seguro usar ! porque isRgb() ya garantizó que el formato es válido
   const match = rgb.match(/\d+/g)!;
   const r = Number(match[0]);
   const g = Number(match[1]);
