@@ -1,10 +1,10 @@
 import { RGB_STRING_PREFIX, RGB_MIN_VALUE, RGB_MAX_VALUE } from '../../constants/rgbColor';
 
 /**
- * Valida si un string es un color en formato RGB válido.
+ * Validates whether a string is a valid RGB color.
  *
- * @param {string} rgb - Color en formato RGB (ej: "rgb(255, 87, 51)")
- * @returns {boolean} `true` si el string es un color RGB válido, `false` en caso contrario
+ * @param {string} rgb - Color in RGB format (e.g., "rgb(255, 87, 51)")
+ * @returns {boolean} `true` if the string is a valid RGB color, `false` otherwise
  *
  * @example
  * isRgb("rgb(255, 87, 51)");

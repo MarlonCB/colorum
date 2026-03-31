@@ -1,21 +1,19 @@
 import { RGB_STRING_PREFIX, RGBA_STRING_PREFIX } from '../../constants/rgbColor';
 import { isRgb } from '../validators/isRgb';
+import { RGBA } from '../../types';
 
 /**
- * Agrega transparencia a un color en formato RGB, retornando un objeto con los valores de cada canal y toStringCss().
+ * Adds transparency to an RGB color, returning an object with each channel value and toStringCss().
  *
- * @param {string} rgb - Color en formato RGB (ej: "rgb(255, 87, 51)")
- * @param {number} amount - Nivel de opacidad entre 0 (transparente) y 1 (opaco)
- * @returns {{ r: number, g: number, b: number, a: number, toStringCss: () => string }} Objeto con valores RGBA y método para convertir a string CSS
+ * @param {string} rgb - Color in RGB format (e.g., "rgb(255, 87, 51)")
+ * @param {number} amount - Opacity level between 0 (transparent) and 1 (opaque)
+ * @returns {RGBA} Object with RGBA values and a method to convert to a CSS string
  *
  * @example
  * alphaRgb("rgb(255, 87, 51)", 0.5);
  * // Returns { r: 255, g: 87, b: 51, a: 0.5, toStringCss: () => "rgba(255, 87, 51, 0.5)" }
  */
-export const alphaRgb = (
-  rgb: string,
-  amount: number
-): { r: number; g: number; b: number; a: number; toStringCss: () => string } => {
+export const alphaRgb = (rgb: string, amount: number): RGBA => {
   if (!isRgb(rgb)) {
     throw new Error(`Invalid RGB color: ${rgb}. Must be in format ${RGB_STRING_PREFIX}(r, g, b)`);
   }
