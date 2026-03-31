@@ -1,1 +1,32 @@
+#!/usr/bin/env sh
+
+# Validate branch name
+BRANCH=$(git symbolic-ref --short HEAD)
+BRANCH_PATTERN="^(feature|bugfix|refactor|test|docs|tooling|chore|ci)/[0-9]{8}-[0-9]{4}-[a-z0-9-]+$"
+
+if [ "$BRANCH" != "main" ] && ! echo "$BRANCH" | grep -qE "$BRANCH_PATTERN"; then
+  echo ""
+  echo "❌ Invalid branch name: '$BRANCH'"
+  echo ""
+  echo "   Expected format: <type>/<DDMMYYYY>-<HHMM>-<kebab-case-description>"
+  echo "   Example: feature/31032026-1430-add-get-random-rgb"
+  echo ""
+  echo "   Allowed types: feature | bugfix | refactor | test | docs | tooling | chore | ci"
+  echo ""
+  exit 1
+fi
+
+# Auto-fix and format staged files
 npx lint-staged
+
+# Strict lint check on all files (no warnings allowed)
+echo "Running lint check..."
+npm run lint:check || { echo ""; echo "❌ Lint check failed. Fix the errors above before committing."; echo ""; exit 1; }
+
+# Run tests to ensure nothing is broken
+echo "Running tests..."
+npm test || { echo ""; echo "❌ Tests failed. Fix the failing tests before committing."; echo ""; exit 1; }
+
+# Verify the build compiles successfully
+echo "Running build..."
+npm run build || { echo ""; echo "❌ Build failed. Fix the errors above before committing."; echo ""; exit 1; }

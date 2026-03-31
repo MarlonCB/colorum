@@ -1,0 +1,12 @@
+#!/usr/bin/env sh
+
+# Prevent direct push to main
+BRANCH=$(git symbolic-ref --short HEAD)
+
+if [ "$BRANCH" = "main" ]; then
+  echo ""
+  echo "❌ Direct push to main is not allowed."
+  echo "   Create a branch and open a pull request instead."
+  echo ""
+  exit 1
+fi
