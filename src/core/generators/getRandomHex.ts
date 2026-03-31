@@ -17,6 +17,7 @@ import { getRandomIntInRange } from '../../helpers';
  */
 export const getRandomHex = (): string => {
   const randomNumber = getRandomIntInRange(MIN_HEX_COLOR, MAX_HEX_COLOR);
+  // padStart garantiza 6 dígitos en caso de que el número tenga ceros a la izquierda (ej: 0x000fff)
   const hexString = randomNumber.toString(16).padStart(HEX_STRING_LENGTH, '0');
   return `${HEX_STRING_PREFIX}${hexString}`;
 };

@@ -1,32 +1,35 @@
 # Constants
 
-Esta carpeta contiene valores constantes utilizados en Colorum. Estas constantes permiten centralizar valores reutilizables en la librería para mantener un código más limpio y fácil de mantener.
+This folder contains constant values used across Colorum. Centralizing constants avoids magic numbers and makes the codebase easier to maintain.
 
-## Reglas de uso
-- Todas las constantes deben ser inmutables y exportadas para su uso en otras partes del código.
-- No deben contener lógica ni funciones, solo valores fijos.
-- Deben estar organizadas en archivos separados según su categoría.
-- Deben ser exportadas a través de un `index.ts` para facilitar su acceso.
+## Rules
 
-## Estructura
-Cada conjunto de constantes debe estar ubicado en su propio archivo dentro de esta carpeta y ser exportado desde `index.ts`.
+- All constants must be immutable and exported for use in other parts of the code.
+- They must not contain logic or functions — only fixed values.
+- They must be organized into separate files by category.
+- They must be exported through an `index.ts` for easy access.
 
-## Ejemplo
+## Structure
+
+Each group of related constants must be in its own file within this folder and exported from `index.ts`.
+
+## Example
+
 ### constants/colorNames.ts
+
 ```ts
 export const COLOR_NAMES: Record<string, string> = {
-    red: "#FF0000",
-    green: "#00FF00",
-    blue: "#0000FF"
+  red: '#FF0000',
+  green: '#00FF00',
+  blue: '#0000FF',
 };
 ```
 
-### ¿Por qué esta constante pertenece a constants?
+### Why does this constant belong in constants?
 
-La constante `COLOR_NAMES` es un buen ejemplo de una constante porque:
+`COLOR_NAMES` is a good example of a constant because:
 
-- Contiene valores fijos que no cambian en la ejecución del programa.
-- Se puede reutilizar en múltiples partes de la librería sin necesidad de redefinirlos.
-- Facilita la centralización de datos, evitando la dispersión de valores en el código.
-- Mejora la legibilidad y el mantenimiento al definir un solo punto de referencia para nombres de colores.
-
+- It contains fixed values that do not change at runtime.
+- It can be reused across multiple parts of the library without redefining it.
+- It centralizes data, avoiding scattered values throughout the code.
+- It improves readability and maintainability by providing a single source of truth.

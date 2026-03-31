@@ -2,7 +2,7 @@ import { RGB_MAX_VALUE, RGB_MIN_VALUE } from '../../../src/constants';
 import { getRandomRgb } from '../../../src/core';
 
 describe('getRandomRgb', () => {
-  // Verifica que r, g y b sean números dentro del rango válido
+  // Verifica que r, g y b sean números dentro del rango válido (0-255)
   it('should return an object with r, g, b values in the valid RGB range', () => {
     const { r, g, b } = getRandomRgb();
 
@@ -18,7 +18,7 @@ describe('getRandomRgb', () => {
     expect(b).toBeLessThanOrEqual(RGB_MAX_VALUE);
   });
 
-  // Verifica que toStringCss retorne un string CSS válido
+  // Verifica que toStringCss() retorne un string CSS válido y consistente con r, g, b
   it('should return a valid CSS rgb string', () => {
     const color = getRandomRgb();
     const cssString = color.toStringCss();

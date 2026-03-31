@@ -22,6 +22,7 @@ export const isRgb = (rgb: string): boolean => {
 
   if (!match) return false;
 
+  // El primer elemento del match es el string completo, se omite con la coma inicial
   const [, r, g, b] = match;
   return [r, g, b].every((value) => {
     const num = Number(value);

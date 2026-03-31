@@ -31,6 +31,7 @@ export const alphaHex = (hex: string, amount: number): string => {
     throw new Error(`Invalid amount: ${amount}. Must be a number between 0 and 1`);
   }
 
+  // Convierte la opacidad (0-1) a su equivalente en el rango 0-255 y luego a hex
   const alphaHexValue = Math.round(amount * RGB_MAX_VALUE)
     .toString(HEX_BASE)
     .padStart(HEX_COMPONENT_LENGTH, HEX_PAD_ZERO)

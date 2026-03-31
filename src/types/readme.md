@@ -1,22 +1,26 @@
 # Types
 
-Esta carpeta contiene definiciones de tipos y estructuras utilizadas en Colorum. Centralizar los tipos en un solo lugar ayuda a mejorar la organización y el mantenimiento del código.
+This folder contains type definitions and data structures used across Colorum. Centralizing types in one place improves code organization and maintainability.
 
-## Reglas de uso
-- Todos los tipos deben estar correctamente tipados con TypeScript.
-- Deben representar estructuras reutilizables en la librería.
-- No deben contener lógica de negocio, solo definiciones de tipos.
-- Deben ser exportados a través de un `index.ts` para facilitar su acceso.
+## Rules
 
-## Estructura
-Cada tipo o conjunto de tipos relacionados debe estar en su propio archivo dentro de esta carpeta y ser exportado desde `index.ts`.
+- All types must be properly typed with TypeScript.
+- They must represent reusable structures within the library.
+- They must not contain business logic — only type definitions.
+- They must be exported through an `index.ts` for easy access.
 
-## Ejemplo
+## Structure
+
+Each type or group of related types must be in its own file within this folder and exported from `index.ts`.
+
+## Example
+
 ### types/color.ts
+
 ```ts
 export type RGB = {
-    r: number;
-    g: number;
-    b: number;
+  r: number;
+  g: number;
+  b: number;
 };
 ```
