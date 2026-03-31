@@ -25,7 +25,8 @@
     "prepare": "husky",
     "size": "size-limit",
     "analyze": "size-limit --why",
-    "bin/new-feature": "node bin/new-feature.js"
+    "bin/new-feature": "node bin/new-feature.js",
+    "bin/new-branch": "node bin/new-branch.js"
   },
   "peerDependencies": {},
   "lint-staged": {
