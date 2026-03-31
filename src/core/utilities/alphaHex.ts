@@ -8,11 +8,11 @@ import { RGB_MAX_VALUE } from '../../constants/rgbColor';
 import { isHex } from '../validators/isHex';
 
 /**
- * Agrega transparencia a un color en formato hexadecimal, convirtiéndolo de #RRGGBB a #RRGGBBAA.
+ * Adds transparency to a hexadecimal color, converting it from #RRGGBB to #RRGGBBAA.
  *
- * @param {string} hex - Color en formato hexadecimal (ej: "#FF5733")
- * @param {number} amount - Nivel de opacidad entre 0 (transparente) y 1 (opaco)
- * @returns {string} Color hexadecimal con canal alfa (ej: "#FF573380")
+ * @param {string} hex - Color in hexadecimal format (e.g., "#FF5733")
+ * @param {number} amount - Opacity level between 0 (transparent) and 1 (opaque)
+ * @returns {string} Hexadecimal color with alpha channel (e.g., "#FF573380")
  *
  * @example
  * alphaHex("#FF5733", 0.5);

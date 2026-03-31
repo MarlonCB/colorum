@@ -1,13 +1,3 @@
-/**
- * Convierte un color en formato hexadecimal a RGB
- *
- * @param {string} hex - Color en formato hexadecimal (ej: "#FF5733" o "FF5733")
- * @returns {{ r: number, g: number, b: number, toStringCss: () => string }} Objeto con valores RGB y método para convertir a string CSS
- *
- * @example
- * hexToRgb("#FF5733");
- * // Returns { r: 255, g: 87, b: 51, toStringCss: () => "rgb(255, 87, 51)" }
- */
 import {
   HEX_STRING_PREFIX,
   HEX_PREFIX_LENGTH,
@@ -18,10 +8,19 @@ import {
   HEX_BLUE_START,
 } from '../../constants/hexColor';
 import { RGB_STRING_PREFIX } from '../../constants/rgbColor';
+import { RGB } from '../../types';
 
-export const hexToRgb = (
-  hex: string
-): { r: number; g: number; b: number; toStringCss: () => string } => {
+/**
+ * Converts a hexadecimal color to RGB format.
+ *
+ * @param {string} hex - Color in hexadecimal format (e.g., "#FF5733")
+ * @returns {RGB} Object with RGB values and a method to convert to a CSS string
+ *
+ * @example
+ * hexToRgb("#FF5733");
+ * // Returns { r: 255, g: 87, b: 51, toStringCss: () => "rgb(255, 87, 51)" }
+ */
+export const hexToRgb = (hex: string): RGB => {
   // Validar que tenga el símbolo # y sea un hexadecimal válido
   const hexPattern = new RegExp(`^${HEX_STRING_PREFIX}[0-9A-Fa-f]{${HEX_STRING_LENGTH}}$`);
   if (!hexPattern.test(hex)) {

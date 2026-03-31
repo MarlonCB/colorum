@@ -17,7 +17,6 @@ import {
  * rgbToHex(136, 58, 241);
  * // Returns "#883AF1"
  */
-
 export const rgbToHex = (r: number, g: number, b: number): string => {
   const validateComponent = (name: string, value: number) => {
     if (typeof value !== 'number' || !Number.isInteger(value) || value < 0 || value > 255) {
