@@ -1,16 +1,14 @@
 import {
   HEX_BASE,
   HEX_BLUE_START,
-  HEX_COMPONENT_LENGTH,
   HEX_GREEN_START,
-  HEX_PAD_ZERO,
-  HEX_PREFIX_LENGTH,
   HEX_RED_START,
   HEX_STRING_LENGTH,
   HEX_STRING_PREFIX,
 } from '../../constants/hex.constants';
 import { isHex } from '../validators/isHex';
 import { HexColor } from '../../types';
+import { numberToHex, stripHexPrefix } from '../../helpers';
 
 /**
  * Inverts a hexadecimal color by subtracting each RGB component from 255 (R' = 255 - R, G' = 255 - G, B' = 255 - B).
@@ -31,16 +29,12 @@ export const invert = (hex: HexColor): string => {
     throw new Error(`Invalid hex color: ${hex}. Must be in format ${HEX_STRING_PREFIX}RRGGBB`);
   }
 
-  const cleanHex = hex.slice(HEX_PREFIX_LENGTH);
+  const cleanHex = stripHexPrefix(hex);
 
   // Extraer cada componente y restar de 255 para obtener el valor invertido
   const r = 255 - parseInt(cleanHex.substring(HEX_RED_START, HEX_GREEN_START), HEX_BASE);
   const g = 255 - parseInt(cleanHex.substring(HEX_GREEN_START, HEX_BLUE_START), HEX_BASE);
   const b = 255 - parseInt(cleanHex.substring(HEX_BLUE_START, HEX_STRING_LENGTH), HEX_BASE);
 
-  // Convertir cada componente invertido a hex con padding de dos dígitos
-  const toHex = (value: number): string =>
-    value.toString(HEX_BASE).padStart(HEX_COMPONENT_LENGTH, HEX_PAD_ZERO);
-
-  return `${HEX_STRING_PREFIX}${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
+  return `${HEX_STRING_PREFIX}${numberToHex(r)}${numberToHex(g)}${numberToHex(b)}`.toUpperCase();
 };

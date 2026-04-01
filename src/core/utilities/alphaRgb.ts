@@ -1,6 +1,7 @@
 import { RGB_STRING_PREFIX, RGBA_STRING_PREFIX } from '../../constants/rgb.constants';
 import { isRgb } from '../validators/isRgb';
 import { RGBAColor } from '../../types';
+import { validateAmount } from '../../helpers';
 
 /**
  * Adds transparency to an RGB color, returning an object with each channel value and toStringCss().
@@ -18,9 +19,7 @@ export const alphaRgb = (rgb: string, amount: number): RGBAColor => {
     throw new Error(`Invalid RGB color: ${rgb}. Must be in format ${RGB_STRING_PREFIX}(r, g, b)`);
   }
 
-  if (amount < 0 || amount > 1) {
-    throw new Error(`Invalid amount: ${amount}. Must be a number between 0 and 1`);
-  }
+  validateAmount(amount);
 
   // Es seguro usar ! porque isRgb() ya garantizó que el formato es válido
   const match = rgb.match(/\d+/g)!;

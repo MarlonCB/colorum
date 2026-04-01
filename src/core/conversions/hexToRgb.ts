@@ -1,6 +1,5 @@
 import {
   HEX_STRING_PREFIX,
-  HEX_PREFIX_LENGTH,
   HEX_STRING_LENGTH,
   HEX_BASE,
   HEX_RED_START,
@@ -9,6 +8,7 @@ import {
 } from '../../constants/hex.constants';
 import { RGB_STRING_PREFIX } from '../../constants/rgb.constants';
 import { HexColor, RGBColor } from '../../types';
+import { stripHexPrefix } from '../../helpers';
 
 /**
  * Converts a hexadecimal color to RGB format.
@@ -27,7 +27,7 @@ export const hexToRgb = (hex: HexColor): RGBColor => {
     throw new Error(`Invalid hex color: ${hex}. Must be in format ${HEX_STRING_PREFIX}RRGGBB`);
   }
 
-  const cleanHex = hex.slice(HEX_PREFIX_LENGTH);
+  const cleanHex = stripHexPrefix(hex);
 
   // Convertir hexadecimal a RGB
   const r = parseInt(cleanHex.substring(HEX_RED_START, HEX_GREEN_START), HEX_BASE);
