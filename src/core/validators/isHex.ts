@@ -1,4 +1,4 @@
-import { HEX_STRING_PREFIX, HEX_STRING_LENGTH } from '../../constants/hexColor';
+import { HEX_STRING_PREFIX, HEX_STRING_LENGTH } from '../../constants/hex.constants';
 
 /**
  * Validates whether a string is a valid hexadecimal color.

@@ -3,7 +3,7 @@ import {
   HEX_PADDING_LENGTH,
   HEX_STRING_PREFIX,
   HEX_PAD_ZERO,
-} from '../../constants/hexColor';
+} from '../../constants/hex.constants';
 
 /**
  * Converts an RGB color to hexadecimal format

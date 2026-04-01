@@ -3,14 +3,15 @@ import {
   HEX_COMPONENT_LENGTH,
   HEX_PAD_ZERO,
   HEX_STRING_PREFIX,
-} from '../../constants/hexColor';
-import { RGB_MAX_VALUE } from '../../constants/rgbColor';
+} from '../../constants/hex.constants';
+import { RGB_MAX_VALUE } from '../../constants/rgb.constants';
 import { isHex } from '../validators/isHex';
+import { HexColor } from '../../types';
 
 /**
  * Adds transparency to a hexadecimal color, converting it from #RRGGBB to #RRGGBBAA.
  *
- * @param {string} hex - Color in hexadecimal format (e.g., "#FF5733")
+ * @param {HexColor} hex - Color in hexadecimal format (e.g., "#FF5733")
  * @param {number} amount - Opacity level between 0 (transparent) and 1 (opaque)
  * @returns {string} Hexadecimal color with alpha channel (e.g., "#FF573380")
  *
@@ -22,7 +23,7 @@ import { isHex } from '../validators/isHex';
  * alphaHex("#000000", 0);
  * // Returns "#00000000"
  */
-export const alphaHex = (hex: string, amount: number): string => {
+export const alphaHex = (hex: HexColor, amount: number): string => {
   if (!isHex(hex)) {
     throw new Error(`Invalid hex color: ${hex}. Must be in format ${HEX_STRING_PREFIX}RRGGBB`);
   }

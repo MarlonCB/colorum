@@ -1,11 +1,11 @@
-export type RGB = {
+export type RGBColor = {
   r: number;
   g: number;
   b: number;
   toStringCss: () => string;
 };
 
-export type RGBA = {
+export type RGBAColor = {
   r: number;
   g: number;
   b: number;

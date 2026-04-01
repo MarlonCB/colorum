@@ -1,4 +1,4 @@
-import { RGB_STRING_PREFIX, RGB_MIN_VALUE, RGB_MAX_VALUE } from '../../constants/rgbColor';
+import { RGB_STRING_PREFIX, RGB_MIN_VALUE, RGB_MAX_VALUE } from '../../constants/rgb.constants';
 
 /**
  * Validates whether a string is a valid RGB color.

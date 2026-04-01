@@ -8,14 +8,15 @@ import {
   HEX_RED_START,
   HEX_STRING_LENGTH,
   HEX_STRING_PREFIX,
-} from '../../constants/hexColor';
+} from '../../constants/hex.constants';
 import { isHex } from '../validators/isHex';
+import { HexColor } from '../../types';
 
 /**
  * Converts a hexadecimal color to grayscale using the luminance formula:
  * Y = (R × 0.299) + (G × 0.587) + (B × 0.114), then assigns Y to each RGB channel.
  *
- * @param {string} color - Color in hexadecimal format (e.g., "#FF5733")
+ * @param {HexColor} color - Color in hexadecimal format (e.g., "#FF5733")
  * @returns {string} Grayscale hexadecimal color (e.g., "#626262")
  *
  * @example
@@ -26,7 +27,7 @@ import { isHex } from '../validators/isHex';
  * grayscale("#FFFFFF");
  * // Returns "#FFFFFF"
  */
-export const grayscale = (color: string): string => {
+export const grayscale = (color: HexColor): string => {
   if (!isHex(color)) {
     throw new Error(`Invalid hex color: ${color}. Must be in format ${HEX_STRING_PREFIX}RRGGBB`);
   }

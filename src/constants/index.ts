@@ -1,2 +1,2 @@
-export * from './hexColor';
-export * from './rgbColor';
+export * from './hex.constants';
+export * from './rgb.constants';
