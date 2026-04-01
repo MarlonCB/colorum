@@ -5,13 +5,13 @@ A lightweight TypeScript color utility library with zero runtime dependencies. P
 ## Installation
 
 ```bash
-npm install colorum
+npm install @marloncb/colorum
 ```
 
 ## Usage
 
 ```ts
-import { hexToRgb, rgbToHex, isHex, getRandomHex } from 'colorum';
+import { hexToRgb, rgbToHex, isHex, getRandomHex } from '@marloncb/colorum';
 ```
 
 ## API
