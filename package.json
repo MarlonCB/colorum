@@ -41,6 +41,17 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
+  "keywords": [
+    "color",
+    "colour",
+    "hex",
+    "rgb",
+    "rgba",
+    "color-conversion",
+    "color-manipulation",
+    "color-utilities",
+    "typescript"
+  ],
   "author": "Marlon Carrillo <marloncb2012@gmail.com>",
   "repository": {
     "type": "git",
