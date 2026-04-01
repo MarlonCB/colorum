@@ -6,21 +6,21 @@ import {
   HEX_RED_START,
   HEX_GREEN_START,
   HEX_BLUE_START,
-} from '../../constants/hexColor';
-import { RGB_STRING_PREFIX } from '../../constants/rgbColor';
-import { RGB } from '../../types';
+} from '../../constants/hex.constants';
+import { RGB_STRING_PREFIX } from '../../constants/rgb.constants';
+import { HexColor, RGBColor } from '../../types';
 
 /**
  * Converts a hexadecimal color to RGB format.
  *
- * @param {string} hex - Color in hexadecimal format (e.g., "#FF5733")
- * @returns {RGB} Object with RGB values and a method to convert to a CSS string
+ * @param {HexColor} hex - Color in hexadecimal format (e.g., "#FF5733")
+ * @returns {RGBColor} Object with RGB values and a method to convert to a CSS string
  *
  * @example
  * hexToRgb("#FF5733");
  * // Returns { r: 255, g: 87, b: 51, toStringCss: () => "rgb(255, 87, 51)" }
  */
-export const hexToRgb = (hex: string): RGB => {
+export const hexToRgb = (hex: HexColor): RGBColor => {
   // Validar que tenga el símbolo # y sea un hexadecimal válido
   const hexPattern = new RegExp(`^${HEX_STRING_PREFIX}[0-9A-Fa-f]{${HEX_STRING_LENGTH}}$`);
   if (!hexPattern.test(hex)) {

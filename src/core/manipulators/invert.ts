@@ -8,13 +8,14 @@ import {
   HEX_RED_START,
   HEX_STRING_LENGTH,
   HEX_STRING_PREFIX,
-} from '../../constants/hexColor';
+} from '../../constants/hex.constants';
 import { isHex } from '../validators/isHex';
+import { HexColor } from '../../types';
 
 /**
  * Inverts a hexadecimal color by subtracting each RGB component from 255 (R' = 255 - R, G' = 255 - G, B' = 255 - B).
  *
- * @param {string} hex - Color in hexadecimal format (e.g., "#FF5733")
+ * @param {HexColor} hex - Color in hexadecimal format (e.g., "#FF5733")
  * @returns {string} Inverted hexadecimal color (e.g., "#00A8CC")
  *
  * @example
@@ -25,7 +26,7 @@ import { isHex } from '../validators/isHex';
  * invert("#000000");
  * // Returns "#FFFFFF"
  */
-export const invert = (hex: string): string => {
+export const invert = (hex: HexColor): string => {
   if (!isHex(hex)) {
     throw new Error(`Invalid hex color: ${hex}. Must be in format ${HEX_STRING_PREFIX}RRGGBB`);
   }

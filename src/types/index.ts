@@ -1,1 +1,2 @@
-export * from './color';
+export * from './hex.types';
+export * from './rgb.types';
