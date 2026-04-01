@@ -1,6 +1,6 @@
 {
-  "name": "colorum",
-  "version": "0.1.0",
+  "name": "@marloncb/colorum",
+  "version": "0.1.1",
   "license": "MIT",
   "type": "module",
   "main": "dist/index.js",

@@ -1,12 +1,16 @@
 #!/usr/bin/env sh
 
-# Prevent direct push to main
+# Prevent direct push to main (tags are allowed)
 BRANCH=$(git symbolic-ref --short HEAD)
 
 if [ "$BRANCH" = "main" ]; then
-  echo ""
-  echo "❌ Direct push to main is not allowed."
-  echo "   Create a branch and open a pull request instead."
-  echo ""
-  exit 1
+  while read local_ref local_sha remote_ref remote_sha; do
+    if echo "$remote_ref" | grep -q "^refs/heads/"; then
+      echo ""
+      echo "❌ Direct push to main is not allowed."
+      echo "   Create a branch and open a pull request instead."
+      echo ""
+      exit 1
+    fi
+  done
 fi
