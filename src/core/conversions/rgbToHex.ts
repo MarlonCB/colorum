@@ -1,9 +1,5 @@
-import {
-  HEX_BASE,
-  HEX_PADDING_LENGTH,
-  HEX_STRING_PREFIX,
-  HEX_PAD_ZERO,
-} from '../../constants/hex.constants';
+import { HEX_STRING_PREFIX } from '../../constants/hex.constants';
+import { numberToHex } from '../../helpers';
 
 /**
  * Converts an RGB color to hexadecimal format
@@ -28,11 +24,5 @@ export const rgbToHex = (r: number, g: number, b: number): string => {
   validateComponent('g', g);
   validateComponent('b', b);
 
-  const toHex = (value: number): string => {
-    const hex = value.toString(HEX_BASE);
-    // Valores menores a 16 producen un solo dígito hex, se agrega el cero para mantener el formato RR
-    return hex.length === HEX_PADDING_LENGTH ? `${HEX_PAD_ZERO}${hex}` : hex;
-  };
-
-  return `${HEX_STRING_PREFIX}${toHex(r)}${toHex(g)}${toHex(b)}`.toUpperCase();
+  return `${HEX_STRING_PREFIX}${numberToHex(r)}${numberToHex(g)}${numberToHex(b)}`.toUpperCase();
 };
