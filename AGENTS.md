@@ -137,6 +137,7 @@ value.padStart(2, '0')
 ## Testing
 
 - Every function must have a test file mirroring its path: `src/core/X/fn.ts` → `test/core/X/fn.test.ts`
+- Tests must be written as part of implementing the function — never as a separate step.
 - Tests are written with Jest via TSDX.
 - Each `it` block should have a Spanish comment above it explaining the intent.
 - Cover: happy path, boundary values, and invalid inputs.
